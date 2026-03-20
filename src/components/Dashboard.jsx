@@ -4,7 +4,7 @@ import CryptoCard from './CryptoCard';
 import SearchBar from './SearchBar';
 import DarkModeToggle from './DarkModeToggle';
 import DetailsModal from './DetailsModal';
-import { RefreshCw, LayoutDashboard, Star, AlertTriangle, Loader2, Sparkles, Search } from 'lucide-react';
+import { RefreshCw, LayoutDashboard, Star, AlertTriangle, Loader2, Sparkles, Search, Github, Linkedin } from 'lucide-react';
 
 const Dashboard = () => {
   const { cryptos, loading, error, refreshData, watchlist } = useCrypto();
@@ -137,10 +137,31 @@ const Dashboard = () => {
 
       <DetailsModal coin={selectedCoin} onClose={() => setSelectedCoin(null)} />
 
-      <footer className="max-w-7xl mx-auto p-6 border-t border-slate-200 dark:border-slate-800 text-center">
+      <footer className="max-w-7xl mx-auto p-6 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
           Powered by <a href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">CoinGecko API</a>
         </p>
+        
+        <div className="flex items-center space-x-4">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+            title="GitHub"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <a
+            href="https://linkedin.com/in/deeraj-s-s"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+            title="LinkedIn"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+        </div>
       </footer>
     </div>
   );
